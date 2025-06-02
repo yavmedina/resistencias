@@ -156,7 +156,7 @@ nav a:hover {
     border-radius: 20px;
     background-color: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px 20p 20px 20px;
+    padding: 30px 0 20px 0;
     margin-bottom: 20px;
     text-align: center;
     position: relative;
@@ -185,7 +185,7 @@ nav a:hover {
     color: #8B4513;
     margin: 0 0 15px 0;
     font-size: 1.4em;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 0px 20px;
 }
 
 .clientes-texto p {
@@ -193,7 +193,22 @@ nav a:hover {
     line-height: 1.6;
     margin: 0 0 15px 0;
     font-size: 0.95em;
-    padding: 0 20px;
+    padding: 0 20px 0px 20px;
 }
 
+/* cambiar color a las estrellas */
+.clientes-texto .fa-star {
+    color: #FFD700;
+    font-size: 16px;
+    margin: 0 2px;
+}
 
+.clientes-texto span {
+    display: block;
+    color: #999;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Espacio adicional para la fecha */
+}
+
+/* footer y contacto */
