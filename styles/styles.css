@@ -63,7 +63,7 @@ nav a {
 
 nav a:hover {
     text-decoration: underline overline;
- 
+
 }
 
 /* PRODUCTOS */
@@ -76,7 +76,7 @@ nav a:hover {
     gap: 30px;
     max-width: 1200px;
 }
-    
+
 .productos-detalle {
     width: 250px;
     height: 300px;
@@ -93,21 +93,21 @@ nav a:hover {
 
 /* Capa roja que aparece en hover */
 .productos-detalle::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 0, 0, 0);
-  transition: background-color 0.3s ease;
-  pointer-events: none;
-  border-radius: 28px;
-  z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    pointer-events: none;
+    border-radius: 28px;
+    z-index: 1;
 }
 
 .productos-detalle:hover::after {
-  background-color: rgba(255, 0, 0, 0.3);
+    background-color: rgba(255, 0, 0, 0.3);
 }
 
 .productos-detalle img {
@@ -118,10 +118,11 @@ nav a:hover {
     object-fit: contain;
     border-radius: 10px;
 }
-    
+
 .productos-detalle h3 {
     position: absolute;
-    bottom: 0px; /*para estar alineado al borde inferior*/
+    bottom: 0px;
+    /*para estar alineado al borde inferior*/
     left: 0;
     width: 100%;
     background-color: red;
@@ -130,10 +131,11 @@ nav a:hover {
     margin: 0;
     text-align: center;
     box-sizing: border-box;
-    z-index: 2; /* CSS definitive guide - página 445 */
+    z-index: 2;
+    /* CSS definitive guide - página 445 */
 
 }
-    
+
 .productos-detalle:hover {
     border-color: red;
     border-style: solid;
@@ -167,7 +169,8 @@ nav a:hover {
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    object-fit: cover; /*diferencia entre contain y cover */
+    object-fit: cover;
+    /*diferencia entre contain y cover */
 
     position: absolute;
     top: -40px;
@@ -208,7 +211,126 @@ nav a:hover {
     color: #999;
     font-size: 16px;
     margin-top: 10px;
-    margin-bottom: 10px; /* Espacio adicional para la fecha */
+    margin-bottom: 10px;
+    /* Espacio adicional para la fecha */
 }
 
-/* footer y contacto */
+/* contacto */
+/* FORMULARIO DE CONTACTO */
+form {
+    max-width: 500px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    display: block;
+}
+
+.formulario,
+.inlineForm {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: red;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: darkred;
+}
+
+
+
+
+/* footer */
+footer {
+    width: 100vw;
+}
+
+.linea {
+    width: 100%;
+    height: 1px;
+    background-color: red;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.info-empresa {
+    display: flex;
+    flex-direction: column;
+}
+
+.empresa {
+    font-family: "OCR A", monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.ubicacion {
+    font-family: "OCR A", monospace;
+    font-size: 24px;
+}
+
+.redes a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px;
+}
+
+.redes i {
+    font-size: 26px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: red;
+    color: whitesmoke;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.redes i:hover {
+    background-color: whitesmoke;
+    color: red;
+    transform: scale(1);
+    border: 2px solid red;
+}

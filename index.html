@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="#inicio">inicio</a></li>
-                <li><a href="#products">productos</a></li>
+                <li><a href="#productos">productos</a></li>
                 <li><a href="#clientes">clientes</a></li>
                 <li><a href="#contacto">contacto</a></li>
             </ul>
@@ -74,7 +74,7 @@
                         <i class="fa-solid fa-star"></i>
                         <br>
                         <span>5/06/2024</span>
-                        
+
                     </div>
                 </div>
                 <div class="clientes-comentarios">
@@ -91,7 +91,7 @@
                         <span>19/05/2025</span>
                     </div>
                 </div>
-                 <div class="clientes-comentarios">
+                <div class="clientes-comentarios">
                     <img src="images/clientes-montgomery-burns.jpeg" alt="">
                     <div class="clientes-texto">
                         <h3>Monty Burns</h3>
@@ -108,14 +108,35 @@
             </div>
         </section>
         <section id="contacto">
-            <h2>contacto</h2>
-            <div class="contacto">
-
-            </div>
+            <h2>Contacto</h2>
+            <form action="https://formspree.io/f/mkndawqr" method="POST">
+                <div class="formulario">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+                </div>
+                <div class="inlineForm">
+                    <input type="email" id="email" name="email" placeholder="Correo Electrónico" required />
+                </div>
+                <div class="inlineForm">
+                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Mensaje" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
     <footer>
-
+        <div class="linea"></div>
+        <div class="text">
+            <div class="info-empresa">
+                <p class="empresa">Ohm Resistencias</p>
+                <p class="ubicacion">Quilmes - Buenos Aires</p>
+            </div>
+            <div class="redes">
+                <a href="https://wa.me/54911xx" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+            </div>
+        </div>
     </footer>
 </body>
 
