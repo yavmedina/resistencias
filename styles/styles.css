@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 20px auto;
+    text-align: center;
+}
+
+h2 {
+    background-color: red;
+    color: white;
+    text-align: right;
+    text-transform: uppercase;
+    padding-right: 80px;
+}
+
+p {
+    font-size: 18px;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/* HEADER */
+header img {
+    display: block;
+    margin: 20px auto;
+}
+
+nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    background-color: red;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline overline;
+ 
+}
+
+/* PRODUCTOS */
+.productos {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+}
+    
+.productos-detalle {
+    width: 250px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Capa roja que aparece en hover */
+.productos-detalle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+  border-radius: 28px;
+  z-index: 1;
+}
+
+.productos-detalle:hover::after {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.productos-detalle img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+    
+.productos-detalle h3 {
+    position: absolute;
+    bottom: 0px; /*para estar alineado al borde inferior*/
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 2; /* CSS definitive guide - página 445 */
+
+}
+    
+.productos-detalle:hover {
+    border-color: red;
+    border-style: solid;
+    /* box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.3); */
+}
+
+/* COMENTARIOS DE CLIENTES */
+.clientes {
+    padding: 60px 20px 20px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ccc;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.clientes-comentarios {
+    max-width: 280px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 20p 20px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.clientes-comentarios img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /*diferencia entre contain y cover */
+
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clientes-texto {
+    margin-top: 50px;
+}
+
+.clientes-texto h3 {
+    color: #8B4513;
+    margin: 0 0 15px 0;
+    font-size: 1.4em;
+}
+
+.clientes-texto p {
+    color: #8B4513;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    font-size: 0.95em;
+}
+
+
+/* estrellas decorativas */
+.clientes-texto p:last-child::after {
+    content: '★★★★★';
+    display: block;
+    color: #8B4513;
+    font-size: 36px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
