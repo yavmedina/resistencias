@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Ohm Resistencias</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER CON NAVEGACIÓN Y CARRITO -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+            
+            <!-- CARRITO -->
+            <div class="carrito-container" onclick="toggleCarrito()">
+                <i class="fas fa-shopping-cart carrito-icon"></i>
+                <div class="carrito-info">
+                    <span id="carrito-total">$0,00</span>
+                </div>
+                <div class="carrito-contador" id="carrito-contador">0</div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- BANNER CON LOGO PRINCIPAL -->
+    <div class="banner">
+        <img src="images/logo_resistencias.png" alt="Ohm Resistencias Logo">
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <section id="contacto">
+            <h1>Contacto</h1>
+            
+            <div class="contacto-container">
+                <!-- MAPA Y UBICACIÓN -->
+                <div class="ubicacion-section">
+                    <h2>Nuestra Ubicación</h2>
+                    <div class="mapa-container">
+                        <!-- Mapa simple de Quilmes -->
+                        <div class="mapa-quilmes">
+                            <i class="fas fa-map-marker-alt mapa-icon"></i>
+                            <p class="ubicacion-texto">Quilmes, Buenos Aires<br>Argentina</p>
+                        </div>
+                    </div>
+                    
+                    <!-- HORARIOS DE ATENCIÓN -->
+                    <div class="horarios-atencion">
+                        <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
+                        <div class="horarios-detalle">
+                            <div class="horario-item">
+                                <span class="dia">Lunes a Viernes:</span>
+                                <span class="hora">8:00 - 18:00 hs</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Sábados:</span>
+                                <span class="hora">9:00 - 13:00 hs</span>
+                            </div>
+                            <div class="horario-item">
+                                <span class="dia">Domingos:</span>
+                                <span class="hora">Cerrado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-info">
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+54 11 4253-7890</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>ventas@ohmresistencias.com.ar</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-whatsapp"></i>
+                                <span>+54 9 11 2345-6789</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMULARIO DE CONTACTO -->
+                <div class="formulario-section">
+                    <h2>Envianos tu Consulta</h2>
+                    <form action="https://formspree.io/f/mkndawqr" method="POST">
+                        <div class="formulario">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required />
+                        </div>
+                        <div class="inlineForm">
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required />
+                        </div>
+                        <div class="inlineForm">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono (opcional)" />
+                        </div>
+                        <div class="inlineForm">
+                            <select id="consulta-tipo" name="consulta-tipo" required>
+                                <option value="">Tipo de Consulta</option>
+                                <option value="productos">Consulta sobre Productos</option>
+                                <option value="presupuesto">Solicitud de Presupuesto</option>
+                                <option value="personalizado">Producto Personalizado</option>
+                                <option value="soporte">Soporte Técnico</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="inlineForm">
+                            <textarea id="mensaje" name="mensaje" rows="5" cols="50" placeholder="Detalle su consulta..." required></textarea>
+                        </div>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="linea"></div>
+        <div class="text">
+            <div class="info-empresa">
+                <p class="empresa">Ohm Resistencias</p>
+                <p class="ubicacion">Quilmes - Buenos Aires</p>
+            </div>
+            <div class="redes">
+                <a href="https://wa.me/54911xx" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/carrito.js"></script>
+</body>
+
+</html>

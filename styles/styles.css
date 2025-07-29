@@ -5,46 +5,48 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-    margin: 20px auto;
-    text-align: center;
-}
-
-h2 {
+/* HEADER CON NAVEGACIÓN Y CARRITO - ARRIBA DE TODO */
+header {
     background-color: red;
-    color: white;
-    text-align: right;
-    text-transform: uppercase;
-    padding-right: 80px;
+    padding: 10px 0;
+    position: relative;
 }
 
-p {
-    font-size: 18px;
-    max-width: 800px;
+/* BANNER CON LOGO - DEBAJO DEL MENÚ (REDUCIDO) */
+.banner {
+    background-color: #f8f8f8;
+    padding: 15px 0;
     text-align: center;
-    margin: 0 auto;
-    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
 }
 
-/* HEADER */
-header img {
+.banner img {
+    max-height: 60px;
+    width: auto;
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
+/* LOGO MÁS GRANDE SOLO EN LA PÁGINA DE INICIO */
+body.inicio .banner img {
+    max-height: 120px;
+}
+
+/* NAVEGACIÓN */
 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;
-    background-color: red;
-    width: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,24 +61,223 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
     text-decoration: underline overline;
+}
 
+nav a.active {
+    text-decoration: underline;
+}
+
+/* CARRITO */
+.carrito-container {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carrito-container:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.carrito-icon {
+    font-size: 20px;
+    color: white;
+    margin-right: 8px;
+}
+
+.carrito-info {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.carrito-info span {
+    color: white;
+}
+
+.carrito-contador {
+    background-color: white;
+    color: red;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+/* TÍTULOS */
+h1 {
+    margin: 30px auto;
+    text-align: center;
+    color: red;
+    font-size: 2.5em;
+}
+
+h2 {
+    background-color: red;
+    color: white;
+    text-align: right;
+    text-transform: uppercase;
+    padding-right: 80px;
+    margin: 30px 0 20px 0;
+}
+
+h3 {
+    color: red;
+    margin: 15px 0;
+}
+
+/* PÁRRAFOS */
+p {
+    font-size: 18px;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 20px;
+}
+
+/* ESTILOS PARA PÁGINA DE INICIO */
+.empresa-descripcion {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.especialidades {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.especialidad-item {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid #eee;
+}
+
+.especialidad-item i {
+    font-size: 2.5em;
+    color: red;
+    margin-bottom: 15px;
+}
+
+.especialidad-item h3 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.especialidad-item p {
+    font-size: 16px;
+    color: #666;
 }
 
 /* PRODUCTOS */
 .productos {
-    margin: 10px auto;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
+.producto-item {
+    width: 280px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.2);
+    border-color: red;
+}
+
+.producto-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto-info h3 {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.precio {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: red;
+    margin: 10px 0;
+}
+
+.btn-agregar {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-agregar:hover {
+    background-color: darkred;
+}
+
+.btn-agregar i {
+    margin-right: 8px;
+    color: white;
+}
+
+/* PRODUCTOS ORIGINALES (para mantener compatibilidad) */
 .productos-detalle {
     width: 250px;
     height: 300px;
@@ -90,8 +291,6 @@ nav a:hover {
     justify-content: center;
 }
 
-
-/* Capa roja que aparece en hover */
 .productos-detalle::after {
     content: '';
     position: absolute;
@@ -122,7 +321,6 @@ nav a:hover {
 .productos-detalle h3 {
     position: absolute;
     bottom: 0px;
-    /*para estar alineado al borde inferior*/
     left: 0;
     width: 100%;
     background-color: red;
@@ -132,14 +330,11 @@ nav a:hover {
     text-align: center;
     box-sizing: border-box;
     z-index: 2;
-    /* CSS definitive guide - página 445 */
-
 }
 
 .productos-detalle:hover {
     border-color: red;
     border-style: solid;
-    /* box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.3); */
 }
 
 /* COMENTARIOS DE CLIENTES */
@@ -170,8 +365,6 @@ nav a:hover {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    /*diferencia entre contain y cover */
-
     position: absolute;
     top: -40px;
     left: 50%;
@@ -199,7 +392,6 @@ nav a:hover {
     padding: 0 20px 0px 20px;
 }
 
-/* cambiar color a las estrellas */
 .clientes-texto .fa-star {
     color: #FFD700;
     font-size: 16px;
@@ -212,10 +404,145 @@ nav a:hover {
     font-size: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
-    /* Espacio adicional para la fecha */
 }
 
-/* contacto */
+/* PÁGINA NOSOTROS */
+.historia-empresa {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.historia-empresa h2 {
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    margin: 30px 0 20px 0;
+    text-align: left;
+}
+
+.historia-empresa p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.valores-lista {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.valores-lista li {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.linea-divisoria {
+    width: 80%;
+    height: 3px;
+    background-color: red;
+    margin: 50px auto;
+}
+
+/* PÁGINA CONTACTO */
+.contacto-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.ubicacion-section,
+.formulario-section {
+    flex: 1;
+    min-width: 400px;
+}
+
+.mapa-container {
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mapa-quilmes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mapa-icon {
+    font-size: 3em;
+    color: red;
+}
+
+.ubicacion-texto {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #666;
+}
+
+.horarios-atencion {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.horarios-atencion h3 {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.horarios-atencion h3 i {
+    margin-right: 10px;
+}
+
+.horarios-detalle {
+    margin-bottom: 25px;
+}
+
+.horario-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.dia {
+    font-weight: bold;
+    color: #333;
+}
+
+.hora {
+    color: red;
+    font-weight: bold;
+}
+
+.contacto-info {
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.info-item i {
+    margin-right: 15px;
+    width: 20px;
+    color: red;
+}
+
 /* FORMULARIO DE CONTACTO */
 form {
     max-width: 500px;
@@ -235,6 +562,8 @@ form {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
+select,
 textarea {
     width: 100%;
     padding: 12px 15px;
@@ -243,13 +572,20 @@ textarea {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    color: #333;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
 textarea:focus {
     outline: none;
     border-color: red;
+}
+
+select {
+    cursor: pointer;
 }
 
 textarea {
@@ -269,18 +605,22 @@ button[type="submit"] {
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
     background-color: darkred;
 }
 
+button[type="submit"] i {
+    margin-right: 8px;
+    color: white;
+}
 
-
-
-/* footer */
+/* FOOTER */
 footer {
     width: 100vw;
+    margin-top: 50px;
 }
 
 .linea {
@@ -293,7 +633,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 20px 30px;
 }
 
 .info-empresa {
@@ -333,4 +673,43 @@ footer {
     color: red;
     transform: scale(1);
     border: 2px solid red;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .carrito-container {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-bottom: 10px;
+    }
+    
+    nav li {
+        margin: 0 15px;
+    }
+    
+    .especialidades {
+        flex-direction: column;
+    }
+    
+    .contacto-container {
+        flex-direction: column;
+    }
+    
+    .ubicacion-section,
+    .formulario-section {
+        min-width: auto;
+    }
+    
+    .text {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
